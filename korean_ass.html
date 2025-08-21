@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korean Learning</title>
+  <style>
+    :root{ --nav-h: 64px; }
+    .home-content { text-align: center; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: #2c3e50;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      min-height: var(--nav-h);
+    }
+
+    nav .logo { font-size: 20px; font-weight: bold; }
+    nav .nav-links { display: flex; gap: 20px; }
+
+    nav .nav-links a {
+      color: white; text-decoration: none; font-size: 16px; transition: color 0.3s; cursor: pointer;
+    }
+    nav .nav-links a:hover { color: #1abc9c; }
+
+    .tab-content {
+      display: none;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+
+    #home { 
+      padding: 0; 
+      max-width: none; 
+      margin: 0; 
+      border-radius: 0; 
+      box-shadow: none; 
+      height: calc(100vh - var(--nav-h));
+      background: linear-gradient(180deg, #f9fbff, #eef3ff);
+      display: none;
+    }
+
+    #home.active { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+    }
+
+    #home .home-content h1 { 
+      font-size: clamp(28px, 5vw, 48px); 
+      margin: 0 0 8px; 
+      color: #2c3e50; 
+    }
+    #home .home-content p { 
+      font-size: clamp(14px, 2.2vw, 18px); 
+      color: #52616b; 
+      margin: 0; 
+    }
+
+    .active { display: block; }
+    h2 { color: #2c3e50; }
+
+    .subnav { display: flex; gap: 15px; margin-bottom: 20px; }
+    .subnav a { padding: 8px 16px; background: #ecf0f1; border-radius: 6px; text-decoration: none; color: #333; font-size: 14px; cursor: pointer; transition: background 0.3s; }
+    .subnav a:hover { background: #dcdde1; }
+    .sub-content { display: none; }
+    .sub-active { display: block; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Korean Learning</div>
+    <div class="nav-links">
+      <a onclick="openTab('home')">Home</a>
+      <a onclick="openTab('vocab')">Vocabulary</a>
+      <a onclick="openTab('grammar')">Grammar</a>
+      <a onclick="openTab('dialogue')">Dialogue</a>
+      <a onclick="openTab('practices')">Practices</a>
+    </div>
+  </nav>
+
+  <div id="home" class="tab-content active">
+    <div class="home-content">
+      <h1>Lesson 1: Greetings</h1>
+      <p>Welcome to your Korean learning journey!</p>
+    </div>
+  </div>
+
+  <div id="vocab" class="tab-content">
+    <h2>Vocabulary</h2>
+    <p>Here you can add your Korean vocabulary words and translations.</p>
+  </div>
+
+  <div id="grammar" class="tab-content">
+    <h2>Grammar</h2>
+    <p>Provide grammar explanations here with examples.</p>
+  </div>
+
+  <div id="dialogue" class="tab-content">
+    <h2>Dialogue</h2>
+    <p>Create example conversations here in Korean and English.</p>
+  </div>
+
+  <div id="practices" class="tab-content">
+    <h2>Practices</h2>
+    <div class="subnav">
+      <a onclick="openSubTab('listening')">Listening</a>
+      <a onclick="openSubTab('reading')">Reading</a>
+      <a onclick="openSubTab('writing')">Writing</a>
+    </div>
+    <div id="listening" class="sub-content sub-active">
+      <h3>Listening Practice</h3>
+      <p>Insert listening activities here.</p>
+    </div>
+    <div id="reading" class="sub-content">
+      <h3>Reading Practice</h3>
+      <p>Insert reading activities here.</p>
+    </div>
+    <div id="writing" class="sub-content">
+      <h3>Writing Practice</h3>
+      <p>Insert writing activities here.</p>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function openSubTab(subId) {
+      const subContents = document.querySelectorAll('.sub-content');
+      subContents.forEach(sub => sub.classList.remove('sub-active'));
+      document.getElementById(subId).classList.add('sub-active');
+    }
+  </script>
+</body>
+</html>
