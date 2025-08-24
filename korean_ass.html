@@ -82,6 +82,48 @@
     .subnav a:hover { background: #dcdde1; }
     .sub-content { display: none; }
     .sub-active { display: block; }
+
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 15px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .grammar-table th, .grammar-table td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    .grammar-table th {
+      background: #f0f2f5;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .example {
+      display: none; 
+      margin-top: 5px;
+      padding: 5px;
+      background: #f5f5f5;
+      border-radius: 5px;
+    }
+    .toggle-btn {
+      padding: 5px 10px;
+      background-color: #0c1258;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    .toggle-btn:hover {
+      background-color: #0c1258;
+    }
   </style>
 </head>
 <body>
@@ -110,7 +152,89 @@
 
   <div id="grammar" class="tab-content">
     <h2>Grammar</h2>
-    <p>Provide grammar explanations here with examples.</p>
+    <table class="grammar-table">
+      <thead>
+        <tr>
+          <th>Particle / Ending</th>
+          <th>Rule</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><h3>은 (eun) / 는 (neun)</h3></td>
+          <td><h4>Used as topic marker.</h4>  
+          <br>– 은 (eun)  : after consonant  
+          <br>– 는 (neun): after vowel
+          </td>
+          <td>
+            <button class="toggle-btn" onclick="toggleExample('ex1')">Show Example</button>
+            <div id="ex1" class="example">
+              나 (na) → 나는 (naneun)<br>
+              책 (chaek) → 책은 (chaekeun)
+
+              <h4>Sample Sentences for 는 (neun):</h4>
+                <br>나 [는] 학생이에요 
+                <br>(na[neun] haksaengieyo)
+                <br>I am a student.
+              <h4>Sample Sentences for 은 (eun):</h4>  
+                <br>우리 선생님 [은] 미국인이에요 
+                <br>(uri seonsaengnim[eun] migukinieyo)
+                <br>Our teacher is American.
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><h3>이 (i) / 가 (ga)</h3></td>
+          <td><h4>Used as subject marker</h4>  
+            <br>– 이 (i) : after consonant  
+            <br>– 가 (ga): after vowel
+          </td>
+          <td>
+            <button class="toggle-btn" onclick="toggleExample('ex2')">Show Example</button>
+            <div id="ex2" class="example">
+              사람 (saram) → 사람이 (sarami)<br>
+              버스 (beoseu) → 버스가 (beoseuga)
+
+              <h4>Sample Sentences for 이 (i):</h4>
+                <br>가방 [이] 무거워요 
+                <br>(gabang[i] mugeowoyo)
+                <br>The beg is heavy.
+              <h4>Sample Sentences for 가 (ga):</h4>  
+                <br>누 [가] 아파요?
+                <br>(nu[ga] apayo)
+                <br>Who is sick?
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><h3>이에요 (ieyo) / 예요 (yeyo)</h3></td>
+          <td><h4>Polite ending meaning 'to be'.</h4>  
+            <br>– 이에요 (ieyo): after consonant  
+            <br>– 예요 (yeyo): after vowel
+          </td>
+          <td>
+            <button class="toggle-btn" onclick="toggleExample('ex3')">Show Example</button>
+            <div id="ex3" class="example">
+              학생 (haksaeng) → 학생이에요 (haksaeng-ieyo)<br>
+              의사 (uisa) → 의사예요 (uisa-yeyo)
+
+              <h4>Sample Sentences for 이에요 (ieyo):</h4>
+              <br>저는 학생 [이에요]
+              <br>Jeoneun haksaeng [ieyo]
+              <br>I am a student
+
+              <h4>Sample Sentences for 에요 (yeyo):</h4>
+              <br>제 취미는 독서 [예요]
+              <br>Je chwimineun dokseo [yeyo]
+              <br>My hobby is reading
+
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div id="dialogue" class="tab-content">
@@ -150,6 +274,18 @@
       const subContents = document.querySelectorAll('.sub-content');
       subContents.forEach(sub => sub.classList.remove('sub-active'));
       document.getElementById(subId).classList.add('sub-active');
+    }
+
+    function toggleExample(id) {
+      const ex = document.getElementById(id);
+      const btn = ex.previousElementSibling; 
+      if (ex.style.display === "none" || ex.style.display === "") {
+        ex.style.display = "block";
+        btn.textContent = "Hide Example"; 
+      } else {
+        ex.style.display = "none";
+        btn.textContent = "Show Example";
+      }
     }
   </script>
 </body>
