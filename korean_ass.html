@@ -1,131 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Korean Learning</title>
-  <style>
-    :root{ --nav-h: 64px; }
-    .home-content { text-align: center; }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 24px;
-      background-color: #2c3e50;
-      color: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      min-height: var(--nav-h);
-    }
-
-    nav .logo { font-size: 20px; font-weight: bold; }
-    nav .nav-links { display: flex; gap: 20px; }
-
-    nav .nav-links a {
-      color: white; text-decoration: none; font-size: 16px; transition: color 0.3s; cursor: pointer;
-    }
-    nav .nav-links a:hover { color: #1abc9c; }
-
-    .tab-content {
-      display: none;
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 30px;
-    }
-
-    #home { 
-      padding: 0; 
-      max-width: none; 
-      margin: 0; 
-      border-radius: 0; 
-      box-shadow: none; 
-      height: calc(100vh - var(--nav-h));
-      background: linear-gradient(180deg, #f9fbff, #eef3ff);
-      display: none;
-    }
-
-    #home.active { 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-    }
-
-    #home .home-content h1 { 
-      font-size: clamp(28px, 5vw, 48px); 
-      margin: 0 0 8px; 
-      color: #2c3e50; 
-    }
-    #home .home-content p { 
-      font-size: clamp(14px, 2.2vw, 18px); 
-      color: #52616b; 
-      margin: 0; 
-    }
-
-    .active { display: block; }
-    h2 { color: #2c3e50; }
-
-    .subnav { display: flex; gap: 15px; margin-bottom: 20px; }
-    .subnav a { padding: 8px 16px; background: #ecf0f1; border-radius: 6px; text-decoration: none; color: #333; font-size: 14px; cursor: pointer; transition: background 0.3s; }
-    .subnav a:hover { background: #dcdde1; }
-    .sub-content { display: none; }
-    .sub-active { display: block; }
-
-    .grammar-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 15px;
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    .grammar-table th, .grammar-table td {
-      border: 1px solid #ddd;
-      padding: 12px 15px;
-      text-align: left;
-    }
-
-    .grammar-table th {
-      background: #f0f2f5;
-      color: #2c3e50;
-      font-weight: bold;
-    }
-
-    .example {
-      display: none; 
-      margin-top: 5px;
-      padding: 5px;
-      background: #f5f5f5;
-      border-radius: 5px;
-    }
-    .toggle-btn {
-      padding: 5px 10px;
-      background-color: #0c1258;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      cursor: pointer;
-    }
-    .toggle-btn:hover {
-      background-color: #0c1258;
-    }
-  </style>
+  <link rel="stylesheet" href="korean.css">
 </head>
+
 <body>
   <nav>
     <div class="logo">Korean Learning</div>
@@ -162,10 +44,13 @@
       </thead>
       <tbody>
         <tr>
-          <td><h3>은 (eun) / 는 (neun)</h3></td>
-          <td><h4>Used as topic marker.</h4>  
-          <br>– 은 (eun)  : after consonant  
-          <br>– 는 (neun): after vowel
+          <td>
+            <h3>은 (eun) / 는 (neun)</h3>
+          </td>
+          <td>
+            <h4>Used as topic marker.</h4>
+            <br>– 은 (eun) : after consonant
+            <br>– 는 (neun): after vowel
           </td>
           <td>
             <button class="toggle-btn" onclick="toggleExample('ex1')">Show Example</button>
@@ -174,21 +59,24 @@
               책 (chaek) → 책은 (chaekeun)
 
               <h4>Sample Sentences for 는 (neun):</h4>
-                <br>나 [는] 학생이에요 
-                <br>(na[neun] haksaengieyo)
-                <br>I am a student.
-              <h4>Sample Sentences for 은 (eun):</h4>  
-                <br>우리 선생님 [은] 미국인이에요 
-                <br>(uri seonsaengnim[eun] migukinieyo)
-                <br>Our teacher is American.
+              <br>나 [는] 학생이에요
+              <br>(na[neun] haksaengieyo)
+              <br>I am a student.
+              <h4>Sample Sentences for 은 (eun):</h4>
+              <br>우리 선생님 [은] 미국인이에요
+              <br>(uri seonsaengnim[eun] migukinieyo)
+              <br>Our teacher is American.
 
             </div>
           </td>
         </tr>
         <tr>
-          <td><h3>이 (i) / 가 (ga)</h3></td>
-          <td><h4>Used as subject marker</h4>  
-            <br>– 이 (i) : after consonant  
+          <td>
+            <h3>이 (i) / 가 (ga)</h3>
+          </td>
+          <td>
+            <h4>Used as subject marker</h4>
+            <br>– 이 (i) : after consonant
             <br>– 가 (ga): after vowel
           </td>
           <td>
@@ -198,20 +86,23 @@
               버스 (beoseu) → 버스가 (beoseuga)
 
               <h4>Sample Sentences for 이 (i):</h4>
-                <br>가방 [이] 무거워요 
-                <br>(gabang[i] mugeowoyo)
-                <br>The beg is heavy.
-              <h4>Sample Sentences for 가 (ga):</h4>  
-                <br>누 [가] 아파요?
-                <br>(nu[ga] apayo)
-                <br>Who is sick?
+              <br>가방 [이] 무거워요
+              <br>(gabang[i] mugeowoyo)
+              <br>The beg is heavy.
+              <h4>Sample Sentences for 가 (ga):</h4>
+              <br>누 [가] 아파요?
+              <br>(nu[ga] apayo)
+              <br>Who is sick?
             </div>
           </td>
         </tr>
         <tr>
-          <td><h3>이에요 (ieyo) / 예요 (yeyo)</h3></td>
-          <td><h4>Polite ending meaning 'to be'.</h4>  
-            <br>– 이에요 (ieyo): after consonant  
+          <td>
+            <h3>이에요 (ieyo) / 예요 (yeyo)</h3>
+          </td>
+          <td>
+            <h4>Polite ending meaning 'to be'.</h4>
+            <br>– 이에요 (ieyo): after consonant
             <br>– 예요 (yeyo): after vowel
           </td>
           <td>
@@ -251,7 +142,352 @@
     </div>
     <div id="listening" class="sub-content sub-active">
       <h3>Listening Practice</h3>
-      <p>Insert listening activities here.</p>
+      <p><strong>Listen to the audio and choose the correct answer:</strong></p>
+
+      <!-- Q1 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q1</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio files/malaysia.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL1" value="말레이시아"> 말레이시아</label><br>
+            <label><input type="radio" name="qL1" value="호주"> 호주</label><br>
+            <label><input type="radio" name="qL1" value="한국"> 한국</label><br>
+            <label><input type="radio" name="qL1" value="영국"> 영국</label><br>
+          </div>
+          <span id="result-qL1" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q2</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio files/australia.wav" type="audio/wav">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL2" value="중국"> 중국</label><br>
+            <label><input type="radio" name="qL2" value="호주"> 호주</label><br>
+            <label><input type="radio" name="qL2" value="일본"> 일본</label><br>
+            <label><input type="radio" name="qL2" value="프랑스"> 프랑스</label><br>
+          </div>
+          <span id="result-qL2" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q3</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio files/korea.wav" type="audio/wav">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL3" value="말레이시아"> 말레이시아</label><br>
+            <label><input type="radio" name="qL3" value="한국"> 한국</label><br>
+            <label><input type="radio" name="qL3" value="미국"> 미국</label><br>
+            <label><input type="radio" name="qL3" value="독일"> 독일</label><br>
+          </div>
+          <span id="result-qL3" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q4</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q4.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL4" value="군인"> 군인</label><br>
+            <label><input type="radio" name="qL4" value="선생님"> 선생님</label><br>
+            <label><input type="radio" name="qL4" value="가수"> 가수</label><br>
+            <label><input type="radio" name="qL4" value="회사원"> 회사원</label><br>
+          </div>
+          <span id="result-qL4" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q5</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q5.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL5" value="군인"> 군인</label><br>
+            <label><input type="radio" name="qL5" value="웨이터"> 웨이터</label><br>
+            <label><input type="radio" name="qL5" value="기자"> 기자</label><br>
+            <label><input type="radio" name="qL5" value="의사"> 의사</label><br>
+          </div>
+          <span id="result-qL5" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q6</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q6.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL6" value="가수"> 가수</label><br>
+            <label><input type="radio" name="qL6" value="요리사"> 요리사</label><br>
+            <label><input type="radio" name="qL6" value="회사원"> 회사원</label><br>
+            <label><input type="radio" name="qL6" value="기자"> 기자</label><br>
+          </div>
+          <span id="result-qL6" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q7</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q7.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL7" value="학생"> 학생</label><br>
+            <label><input type="radio" name="qL7" value="의사"> 의사</label><br>
+            <label><input type="radio" name="qL7" value="선생님"> 선생님</label><br>
+            <label><input type="radio" name="qL7" value="군인"> 군인</label><br>
+          </div>
+          <span id="result-qL7" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q8</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q8.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL8" value="웨이터"> 웨이터</label><br>
+            <label><input type="radio" name="qL8" value="요리사"> 요리사</label><br>
+            <label><input type="radio" name="qL8" value="가수"> 가수</label><br>
+            <label><input type="radio" name="qL8" value="회사원"> 회사원</label><br>
+          </div>
+          <span id="result-qL8" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q9</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q9.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL9" value="기자"> 기자</label><br>
+            <label><input type="radio" name="qL9" value="학생"> 학생</label><br>
+            <label><input type="radio" name="qL9" value="선생님"> 선생님</label><br>
+            <label><input type="radio" name="qL9" value="의사"> 의사</label><br>
+          </div>
+          <span id="result-qL9" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q10</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q10.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL10" value="영국"> 영국</label><br>
+            <label><input type="radio" name="qL10" value="프랑스"> 프랑스</label><br>
+            <label><input type="radio" name="qL10" value="일본"> 일본</label><br>
+            <label><input type="radio" name="qL10" value="독일"> 독일</label><br>
+          </div>
+          <span id="result-qL10" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q11</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q11.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL11" value="미국"> 미국</label><br>
+            <label><input type="radio" name="qL11" value="한국"> 한국</label><br>
+            <label><input type="radio" name="qL11" value="중국"> 중국</label><br>
+            <label><input type="radio" name="qL11" value="호주"> 호주</label><br>
+          </div>
+          <span id="result-qL11" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q12</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q12.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL12" value="영국"> 영국</label><br>
+            <label><input type="radio" name="qL12" value="독일"> 독일</label><br>
+            <label><input type="radio" name="qL12" value="프랑스"> 프랑스</label><br>
+            <label><input type="radio" name="qL12" value="말레이시아"> 말레이시아</label><br>
+          </div>
+          <span id="result-qL12" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q13</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q13.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL13" value="선생님"> 선생님</label><br>
+            <label><input type="radio" name="qL13" value="군인"> 군인</label><br>
+            <label><input type="radio" name="qL13" value="학생"> 학생</label><br>
+            <label><input type="radio" name="qL13" value="기자"> 기자</label><br>
+          </div>
+          <span id="result-qL13" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q14</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q14.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL14" value="웨이터"> 웨이터</label><br>
+            <label><input type="radio" name="qL14" value="회사원"> 회사원</label><br>
+            <label><input type="radio" name="qL14" value="기자"> 기자</label><br>
+            <label><input type="radio" name="qL14" value="의사"> 의사</label><br>
+          </div>
+          <span id="result-qL14" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q15 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q15</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q15.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL15" value="요리사"> 요리사</label><br>
+            <label><input type="radio" name="qL15" value="가수"> 가수</label><br>
+            <label><input type="radio" name="qL15" value="학생"> 학생</label><br>
+            <label><input type="radio" name="qL15" value="웨이터"> 웨이터</label><br>
+          </div>
+          <span id="result-qL15" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q16 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q16</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q16.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL16" value="중국"> 중국</label><br>
+            <label><input type="radio" name="qL16" value="한국"> 한국</label><br>
+            <label><input type="radio" name="qL16" value="일본"> 일본</label><br>
+            <label><input type="radio" name="qL16" value="프랑스"> 프랑스</label><br>
+          </div>
+          <span id="result-qL16" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q17 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q17</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q17.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL17" value="일본"> 일본</label><br>
+            <label><input type="radio" name="qL17" value="중국"> 중국</label><br>
+            <label><input type="radio" name="qL17" value="한국"> 한국</label><br>
+            <label><input type="radio" name="qL17" value="미국"> 미국</label><br>
+          </div>
+          <span id="result-qL17" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Q18 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q18</div>
+        <div class="listening-body">
+          <p>
+            <audio controls>
+              <source src="audio/q18.mp3" type="audio/mp3">
+            </audio>
+          </p>
+          <div class="listening-options">
+            <label><input type="radio" name="qL18" value="프랑스"> 프랑스</label><br>
+            <label><input type="radio" name="qL18" value="영국"> 영국</label><br>
+            <label><input type="radio" name="qL18" value="독일"> 독일</label><br>
+            <label><input type="radio" name="qL18" value="호주"> 호주</label><br>
+          </div>
+          <span id="result-qL18" class="result"></span>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="submitListeningAll()">Submit All</button>
     </div>
     <div id="reading" class="sub-content">
       <h3>Reading Practice</h3>
@@ -259,34 +495,98 @@
     </div>
     <div id="writing" class="sub-content">
       <h3>Writing Practice</h3>
-      <p>Insert writing activities here.</p>
+      <p><strong>Translate into Korean (Hangul):</strong></p>
+
+      <!-- Question 1 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q1</div>
+        <div class="question-body">
+          <p><strong>English:</strong> Hello. / How do you do?</p>
+          <p><strong>Pronunciation:</strong> Annyeonghaseyo / Jal jinaeseyo?</p>
+          <input type="text" id="q1" data-answer="안녕하세요?" placeholder="Type in Hangul..." required />
+          <span id="result-q1" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q2</div>
+        <div class="question-body">
+          <p><strong>English:</strong> Nice to meet you</p>
+          <p><strong>Pronunciation:</strong> Mannaseo bangawoyo</p>
+          <input type="text" id="q2" data-answer="만나서 반가워요" placeholder="Type in Hangul..." required />
+          <span id="result-q2" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q3</div>
+        <div class="question-body">
+          <p><strong>English:</strong> Which country are you from?</p>
+          <p><strong>Pronunciation:</strong> Dangsin-eun eoneu nala salam-ingayo?</p>
+          <input type="text" id="q3" data-answer="당신은 어느 나라 사람인가요?" placeholder="Type in Hangul..." required />
+          <span id="result-q3" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q4</div>
+        <div class="question-body">
+          <p><strong>English:</strong> How old are you?</p>
+          <p><strong>Pronunciation:</strong> Myeoch sal-ieyo?</p>
+          <input type="text" id="q4" data-answer="몇 살이에요?" placeholder="Type in Hangul..." required />
+          <span id="result-q4" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q5</div>
+        <div class="question-body">
+          <p><strong>English:</strong> What is your job?</p>
+          <p><strong>Pronunciation:</strong> Jig-eob-i mwo-eyo?</p>
+          <input type="text" id="q5" data-answer="직업이 뭐예요?" placeholder="Type in Hangul..." required />
+          <span id="result-q5" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q6</div>
+        <div class="question-body">
+          <p><strong>English:</strong> I am a teacher</p>
+          <p><strong>Pronunciation:</strong> Jeoneun seonsaengnim-ieyo</p>
+          <input type="text" id="q6" data-answer="저는 선생님이에요" placeholder="Type in Hangul..." required />
+          <span id="result-q6" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q7</div>
+        <div class="question-body">
+          <p><strong>English:</strong> Bye</p>
+          <p><strong>Pronunciation:</strong> Annyeonghi gyeseyo</p>
+          <input type="text" id="q7" data-answer="안녕히 계세요" placeholder="Type in Hangul..." required />
+          <span id="result-q7" class="result"></span>
+        </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="writing-exercise">
+        <div class="question-header">Q8</div>
+        <div class="question-body">
+          <p><strong>English:</strong> See you later</p>
+          <p><strong>Pronunciation:</strong> Najung-e bwayo</p>
+          <input type="text" id="q8" data-answer="나중에 봐요" placeholder="Type in Hangul..." required />
+          <span id="result-q8" class="result"></span>
+        </div>
+      </div>
+      <button class="submit-btn" onclick="submitAll()">Submit All</button>
     </div>
-  </div>
 
-  <script>
-    function openTab(tabId) {
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(content => content.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-
-    function openSubTab(subId) {
-      const subContents = document.querySelectorAll('.sub-content');
-      subContents.forEach(sub => sub.classList.remove('sub-active'));
-      document.getElementById(subId).classList.add('sub-active');
-    }
-
-    function toggleExample(id) {
-      const ex = document.getElementById(id);
-      const btn = ex.previousElementSibling; 
-      if (ex.style.display === "none" || ex.style.display === "") {
-        ex.style.display = "block";
-        btn.textContent = "Hide Example"; 
-      } else {
-        ex.style.display = "none";
-        btn.textContent = "Show Example";
-      }
-    }
-  </script>
+    <script src="korean.js"></script>
 </body>
 </html>
