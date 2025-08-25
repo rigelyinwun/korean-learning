@@ -360,3 +360,35 @@ h2 {
     .audio-btn:hover {
       background-color: #1abc9c;
     }
+
+       .dialogue {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .line {
+      display: flex;
+      max-width: 100%;
+    }
+    .line.a {
+      justify-content: flex-start;
+    }
+    .line.b {
+      justify-content: flex-end;
+    }
+    .bubble {
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-size: 16px;
+     
+    }
+    .a .bubble {
+      background: #2c3e50;
+      color: #ffffff;
+      border-top-left-radius: 0;
+    }
+    .b .bubble {
+      background: #000000;
+      color: #ffffff;
+      border-top-right-radius: 0;
+    }
