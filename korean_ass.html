@@ -1,156 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Korean Learning</title>
-  <style>
-    :root{ --nav-h: 64px; }
-    .home-content { text-align: center; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korean Learning</title>
+    <style>
+      :root {
+        --nav-h: 64px;
+      }
+      .home-content {
+        text-align: center;
+      }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 24px;
-      background-color: #2c3e50;
-      color: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      min-height: var(--nav-h);
-    }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 24px;
+        background-color: #2c3e50;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        min-height: var(--nav-h);
+      }
 
-    nav .logo { font-size: 20px; font-weight: bold; }
-    nav .nav-links { display: flex; gap: 20px; }
+      nav .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      nav .nav-links {
+        display: flex;
+        gap: 20px;
+      }
 
-    nav .nav-links a {
-      color: white; text-decoration: none; font-size: 16px; transition: color 0.3s; cursor: pointer;
-    }
-    nav .nav-links a:hover { color: #1abc9c; }
+      nav .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+        cursor: pointer;
+      }
+      nav .nav-links a:hover {
+        color: #1abc9c;
+      }
 
-    .tab-content {
-      display: none;
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 30px;
-    }
+      .tab-content {
+        display: none;
+        padding: 40px;
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+      }
 
-    #home { 
-      padding: 0; 
-      max-width: none; 
-      margin: 0; 
-      border-radius: 0; 
-      box-shadow: none; 
-      height: calc(100vh - var(--nav-h));
-      background: linear-gradient(180deg, #f9fbff, #eef3ff);
-      display: none;
-    }
+      #home {
+        padding: 0;
+        max-width: none;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        height: calc(100vh - var(--nav-h));
+        background: linear-gradient(180deg, #f9fbff, #eef3ff);
+        display: none;
+      }
 
-    #home.active { 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-    }
+      #home.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    #home .home-content h1 { 
-      font-size: clamp(28px, 5vw, 48px); 
-      margin: 0 0 8px; 
-      color: #2c3e50; 
-    }
-    #home .home-content p { 
-      font-size: clamp(14px, 2.2vw, 18px); 
-      color: #52616b; 
-      margin: 0; 
-    }
+      #home .home-content h1 {
+        font-size: clamp(28px, 5vw, 48px);
+        margin: 0 0 8px;
+        color: #2c3e50;
+      }
+      #home .home-content p {
+        font-size: clamp(14px, 2.2vw, 18px);
+        color: #52616b;
+        margin: 0;
+      }
 
-    .active { display: block; }
-    h2 { color: #2c3e50; }
+      .active {
+        display: block;
+      }
+      h2 {
+        color: #2c3e50;
+      }
 
-    .subnav { display: flex; gap: 15px; margin-bottom: 20px; }
-    .subnav a { padding: 8px 16px; background: #ecf0f1; border-radius: 6px; text-decoration: none; color: #333; font-size: 14px; cursor: pointer; transition: background 0.3s; }
-    .subnav a:hover { background: #dcdde1; }
-    .sub-content { display: none; }
-    .sub-active { display: block; }
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="logo">Korean Learning</div>
-    <div class="nav-links">
-      <a onclick="openTab('home')">Home</a>
-      <a onclick="openTab('vocab')">Vocabulary</a>
-      <a onclick="openTab('grammar')">Grammar</a>
-      <a onclick="openTab('dialogue')">Dialogue</a>
-      <a onclick="openTab('practices')">Practices</a>
+      .subnav {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .subnav a {
+        padding: 8px 16px;
+        background: #ecf0f1;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .subnav a:hover {
+        background: #dcdde1;
+      }
+      .sub-content {
+        display: none;
+      }
+      .sub-active {
+        display: block;
+      }
+
+      .writing-exercise {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        background: #fafafa;
+      }
+
+      .question-header {
+        background: #2c3e50;
+        color: white;
+        font-weight: bold;
+        padding: 14px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 60px;
+      }
+
+      .question-body {
+        flex: 1;
+        padding: 25px 25px;
+      }
+
+      .question-body p {
+        margin: 6px 0;
+      }
+
+      .question-body input {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+        font-size: 15px;
+      }
+
+      .result {
+        margin-left: 8px;
+        font-size: 15px;
+        font-weight: bold;
+        display: none;
+      }
+
+      .result.correct {
+        color: #27ae60;
+      }
+
+      .result.wrong {
+        color: #e74c3c;
+      }
+
+      .submit-btn {
+        display: block;
+        margin: 20px auto;
+        background: #1abc9c;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .submit-btn:hover {
+        background: #16a085;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Korean Learning</div>
+      <div class="nav-links">
+        <a onclick="openTab('home')">Home</a>
+        <a onclick="openTab('vocab')">Vocabulary</a>
+        <a onclick="openTab('grammar')">Grammar</a>
+        <a onclick="openTab('dialogue')">Dialogue</a>
+        <a onclick="openTab('practices')">Practices</a>
+      </div>
+    </nav>
+
+    <div id="home" class="tab-content active">
+      <div class="home-content">
+        <h1>Lesson 1: Greetings</h1>
+        <p>Welcome to your Korean learning journey!</p>
+      </div>
     </div>
-  </nav>
 
-  <div id="home" class="tab-content active">
-    <div class="home-content">
-      <h1>Lesson 1: Greetings</h1>
-      <p>Welcome to your Korean learning journey!</p>
+    <div id="vocab" class="tab-content">
+      <h2>Vocabulary</h2>
+      <p>Here you can add your Korean vocabulary words and translations.</p>
     </div>
-  </div>
 
-  <div id="vocab" class="tab-content">
-    <h2>Vocabulary</h2>
-    <p>Here you can add your Korean vocabulary words and translations.</p>
-  </div>
-
-  <div id="grammar" class="tab-content">
-    <h2>Grammar</h2>
-    <p>Provide grammar explanations here with examples.</p>
-  </div>
-
-  <div id="dialogue" class="tab-content">
-    <h2>Dialogue</h2>
-    <p>Create example conversations here in Korean and English.</p>
-  </div>
-
-  <div id="practices" class="tab-content">
-    <h2>Practices</h2>
-    <div class="subnav">
-      <a onclick="openSubTab('listening')">Listening</a>
-      <a onclick="openSubTab('reading')">Reading</a>
-      <a onclick="openSubTab('writing')">Writing</a>
+    <div id="grammar" class="tab-content">
+      <h2>Grammar</h2>
+      <p>Provide grammar explanations here with examples.</p>
     </div>
-    <div id="listening" class="sub-content sub-active">
-      <h3>Listening Practice</h3>
-      <p>Insert listening activities here.</p>
-    </div>
-    <div id="reading" class="sub-content">
-      <h3>Reading Practice</h3>
-      <p>Insert reading activities here.</p>
-    </div>
-    <div id="writing" class="sub-content">
-      <h3>Writing Practice</h3>
-      <p>Insert writing activities here.</p>
-    </div>
-  </div>
 
-  <script>
-    function openTab(tabId) {
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(content => content.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
+    <div id="dialogue" class="tab-content">
+      <h2>Dialogue</h2>
+      <p>Create example conversations here in Korean and English.</p>
+    </div>
+
+    <div id="practices" class="tab-content">
+      <h2>Practices</h2>
+      <div class="subnav">
+        <a onclick="openSubTab('listening')">Listening</a>
+        <a onclick="openSubTab('reading')">Reading</a>
+        <a onclick="openSubTab('writing')">Writing</a>
+      </div>
+      <div id="listening" class="sub-content sub-active">
+        <h3>Listening Practice</h3>
+        <p>Insert listening activities here.</p>
+      </div>
+      <div id="reading" class="sub-content">
+        <h3>Reading Practice</h3>
+        <p>Insert reading activities here.</p>
+      </div>
+      <div id="writing" class="sub-content">
+        <h3>Writing Practice</h3>
+        <p><strong>Translate into Korean (Hangul):</strong></p>
+
+        <!-- Question 1 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q1</div>
+          <div class="question-body">
+            <p><strong>English:</strong> Hello. / How do you do?</p>
+            <p><strong>Pronunciation:</strong> Annyeonghaseyo / Jal jinaeseyo?</p>
+            <input type="text" id="q1" data-answer="안녕하세요?" placeholder="Type in Hangul..." required />
+            <span id="result-q1" class="result"></span>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q2</div>
+          <div class="question-body">
+            <p><strong>English:</strong> Nice to meet you</p>
+            <p><strong>Pronunciation:</strong> Mannaseo bangawoyo</p>
+            <input type="text" id="q2" data-answer="만나서 반가워요" placeholder="Type in Hangul..." required />
+            <span id="result-q2" class="result"></span>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q3</div>
+          <div class="question-body">
+            <p><strong>English:</strong> Which country are you from?</p>
+            <p><strong>Pronunciation:</strong> Dangsin-eun eoneu nala salam-ingayo?</p>
+            <input type="text" id="q3" data-answer="당신은 어느 나라 사람인가요?" placeholder="Type in Hangul..." required />
+            <span id="result-q3" class="result"></span>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q4</div>
+          <div class="question-body">
+            <p><strong>English:</strong> How old are you?</p>
+            <p><strong>Pronunciation:</strong> Myeoch sal-ieyo?</p>
+            <input type="text" id="q4" data-answer="몇 살이에요?" placeholder="Type in Hangul..." required />
+            <span id="result-q4" class="result"></span>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q5</div>
+          <div class="question-body">
+            <p><strong>English:</strong> What is your job?</p>
+            <p><strong>Pronunciation:</strong> Jig-eob-i mwo-eyo?</p>
+            <input type="text" id="q5" data-answer="직업이 뭐예요?" placeholder="Type in Hangul..." required />
+            <span id="result-q5" class="result"></span>
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q6</div>
+          <div class="question-body">
+            <p><strong>English:</strong> I am a teacher</p>
+            <p><strong>Pronunciation:</strong> Jeoneun seonsaengnim-ieyo</p>
+            <input type="text" id="q6" data-answer="저는 선생님이에요" placeholder="Type in Hangul..." required />
+            <span id="result-q6" class="result"></span>
+          </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q7</div>
+          <div class="question-body">
+            <p><strong>English:</strong> Bye</p>
+            <p><strong>Pronunciation:</strong> Annyeonghi gyeseyo</p>
+            <input type="text" id="q7" data-answer="안녕히 계세요" placeholder="Type in Hangul..." required />
+            <span id="result-q7" class="result"></span>
+          </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="writing-exercise">
+          <div class="question-header">Q8</div>
+          <div class="question-body">
+            <p><strong>English:</strong> See you later</p>
+            <p><strong>Pronunciation:</strong> Najung-e bwayo</p>
+            <input type="text" id="q8" data-answer="나중에 봐요" placeholder="Type in Hangul..." required />
+            <span id="result-q8" class="result"></span>
+          </div>
+        </div>
+        <button class="submit-btn" onclick="submitAll()">Submit All</button>
+      </div>
+    <script>
+      function openTab(tabId) {
+        const contents = document.querySelectorAll(".tab-content");
+        contents.forEach((content) => content.classList.remove("active"));
+        document.getElementById(tabId).classList.add("active");
+      }
+
+      function openSubTab(subId) {
+        const subContents = document.querySelectorAll(".sub-content");
+        subContents.forEach((sub) => sub.classList.remove("sub-active"));
+        document.getElementById(subId).classList.add("sub-active");
+      }
+    function submitAll() {
+      const inputs = document.querySelectorAll("#writing input");
+      let allFilled = true;
+
+      document.querySelectorAll(".error").forEach(e => e.remove());
+
+      inputs.forEach((input) => {
+        if (input.value.trim() === "") {
+          allFilled = false;
+
+          let error = document.createElement("span");
+          error.className = "error";
+          error.style.color = "red";
+          error.style.marginLeft = "10px";
+          error.textContent = "⚠️ Required";
+          input.after(error);
+        }
+      });
+
+      if (!allFilled) {
+        return; 
+      }
+
+      inputs.forEach((input) => {
+        const correctAnswer = input.dataset.answer.trim();
+        const userAnswer = input.value.trim();
+        const result = document.getElementById("result-" + input.id);
+
+        if (userAnswer === correctAnswer) {
+          result.innerHTML = `✅ <span class="correct"></span>`;
+          result.classList.remove("wrong");
+          result.classList.add("correct");
+        } else {
+          result.innerHTML = `❌ <span class="wrong">${correctAnswer}</span>`;
+          result.classList.remove("correct");
+          result.classList.add("wrong");
+        }
+        result.style.display = "inline";
+      });
     }
 
-    function openSubTab(subId) {
-      const subContents = document.querySelectorAll('.sub-content');
-      subContents.forEach(sub => sub.classList.remove('sub-active'));
-      document.getElementById(subId).classList.add('sub-active');
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
