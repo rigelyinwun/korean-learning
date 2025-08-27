@@ -112,3 +112,40 @@ function submitListeningAll() {
         result.style.display = "inline";
     }
 }
+
+const readingAnswers = {
+    qR1: "Teacher",
+    qR2: "Doctor",
+    qR3: "Singer",
+    qR4: "Australia",
+    qR5: "Britain"
+};
+
+function submitReadingAll() {
+    for (let i = 1; i <= 5; i++) {
+        const qName = "qR" + i;
+        const selected = document.querySelector(`input[name='${qName}']:checked`);
+        const result = document.getElementById("result-" + qName);
+        const correctAnswer = readingAnswers[qName];
+
+        if (!result) continue;
+
+        if (!selected) {
+            result.innerHTML = "⚠️ Please select an answer";
+            result.classList.remove("correct", "wrong");
+            result.style.display = "inline";
+            continue;
+        }
+
+        if (selected.value === correctAnswer) {
+            result.innerHTML = `✅ <span class="correct"></span>`;
+            result.classList.remove("wrong");
+            result.classList.add("correct");
+        } else {
+            result.innerHTML = `❌ <span class="wrong">${correctAnswer}</span>`;
+            result.classList.remove("correct");
+            result.classList.add("wrong");
+        }
+        result.style.display = "inline";
+    }
+}
